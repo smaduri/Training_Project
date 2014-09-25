@@ -31,3 +31,27 @@ Feature: My first example feature
     And I enter "abc" and "123 street" and "abc@xyz.com" and select "Check"
     And I click place order
     Then I should see "Thank you for adopting a puppy!"
+
+  Scenario: Adopt another puppy
+    When I open puppies website
+    And I click view details for Brook
+    And I click adopt me button
+    And I click adopt another puppy
+    And I click view details for Hanna
+    And I click adopt me button
+    And I check collar and leash indexed "0"
+    And I check collar and leash indexed "1"
+
+  Scenario Outline: Adopt another puppy scenario outline
+    When I open puppies website
+    And I click view details for Brook
+    And I click adopt me button
+    And I click adopt another puppy
+    And I click view details for Hanna
+    And I click adopt me button
+    And I check collar and leash indexed "<index0>"
+    And I check collar and leash indexed "<index1>"
+   Examples:
+    |index0|index1|
+    |0     |1     |
+

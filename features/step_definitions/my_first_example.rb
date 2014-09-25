@@ -31,6 +31,7 @@ end
 
 And(/^I check collar and leash$/) do
   @browser.find_element(:id => 'collar').click
+  sleep 5
 end
 
 And(/^I click complete adoption$/) do
@@ -56,4 +57,19 @@ end
 Then(/^I should see "([^"]*)"$/) do |arg|
   success_text = @browser.find_element(:id => 'notice').text
   expect(success_text).to eq(arg)
+end
+
+And(/^I click adopt another puppy$/) do
+  @browser.find_elements(:class => 'rounded_button')[1].click
+end
+
+And(/^I check collar and leash for Hanna$/) do
+  @browser.find_elements(:id => 'collar')[1].click
+  sleep 5
+end
+
+
+And(/^I check collar and leash indexed "([^"]*)"$/) do   |arg|
+  @browser.find_elements(:id => 'collar')[arg.to_i].click
+  sleep 5
 end
