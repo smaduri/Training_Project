@@ -1,10 +1,12 @@
 require 'selenium-webdriver'
+require 'saucelabs'
+include SauceLabs
 
 
 
 Before do
-  @browser = Selenium::WebDriver.for :chrome
-
+  @browser = SauceLabs.selenium_driver
+  # @browser = Selenium::WebDriver.for :chrome
 
 end
 
