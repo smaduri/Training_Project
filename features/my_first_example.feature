@@ -1,5 +1,8 @@
 Feature: My first example feature
 
+  @beta_1
+  @functionality1
+    @fast
   Scenario: Open puppies website and click view details for brook
     When I open puppies website
     And I click view details for Brook
@@ -10,6 +13,9 @@ Feature: My first example feature
     And I click view details for Hanna
     Then I can see "Adopt Me!" button
 
+  @beta_2
+  @functionality2
+  @slow
   Scenario Outline: Open puppies website and click view details for all puppies
     When I open puppies website
     And I click view details for puppy index "<index>"
@@ -31,7 +37,7 @@ Feature: My first example feature
     And I enter "abc" and "123 street" and "abc@xyz.com" and select "Check"
     And I click place order
     Then I should see "Thank you for adopting a puppy!"
-
+  @beta_3
   Scenario: Adopt another puppy
     When I open puppies website
     And I click view details for Brook
