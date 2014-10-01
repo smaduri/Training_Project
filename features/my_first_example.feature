@@ -37,6 +37,7 @@ Feature: My first example feature
     And I enter "abc" and "123 street" and "abc@xyz.com" and select "Check"
     And I click place order
     Then I should see "Thank you for adopting a puppy!"
+
   @beta_3
   Scenario: Adopt another puppy
     When I open puppies website
