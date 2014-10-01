@@ -62,3 +62,10 @@ Feature: My first example feature
     |index0|index1|
     |0     |1     |
 
+
+
+  Scenario: Open puppies website and click view details for brook and get expected data from data file
+    When I open puppies website
+    And I click view details for Brook
+    Then I can see adopt me button
+

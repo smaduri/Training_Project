@@ -72,3 +72,16 @@ And(/^I check collar and leash indexed "([^"]*)"$/) do   |arg|
   @browser.find_elements(id: 'collar')[arg.to_i].click
   sleep 5
 end
+
+
+Then(/^I can see adopt me button$/) do
+
+  dir_to_yml = Dir.pwd + '/features/support/datafiles'
+  @yml_hash = YAML.load_file("#{dir_to_yml}/expected_data.yml")
+
+  adopt_me_brook = @browser.find_element(class: 'rounded_button')
+  text_value_button = adopt_me_brook['value']
+  expect(text_value_button).to eq(@yml_hash['adopt_key'])
+
+
+end
