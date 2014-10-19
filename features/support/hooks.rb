@@ -11,6 +11,9 @@ Before do
 end
 
 
-After do
+After do |scenario|
+  if scenario.failed?
+    @browser.save_screenshot('failed_screenshot.png')
+  end
   @browser.quit
 end
